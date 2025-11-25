@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = "sqlserver://10.20.2.10;database=pulse;user=Pulse_RO;password=PD@T@r3@der;encrypt=false;trustServerCertificate=true"
+}
+
+model FlotationRecord {
+  id         Int      @id @default(autoincrement())
+  timestamp  DateTime @default(now())
+  extraction Float
+  p1         Float
+  p4         Float
+  pP         Float
+  p2         Float
+  p5         Float
+  pK         Float
+  p3         Float
+  cd         Float
+  cdVal      Float
+  op         Float
+  oo         Float
+  o1k        Float
+  o2k        Float
+  o1o        Float
+  o2o        Float
+
+  @@map("FlotationRecords")
+}
