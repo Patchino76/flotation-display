@@ -8,7 +8,7 @@ interface FlotationDisplayProps {
 
 export function FlotationDisplay({ data }: FlotationDisplayProps) {
   const formatPercent = (value: number) => value.toFixed(2);
-  const formatValue = (value: number, decimals = 2) => value.toFixed(decimals);
+  const formatValue = (value: number, decimals = 3) => value.toFixed(decimals);
 
   const labelColor = "#00ff00";
   const valueColor = "#ff0000";
@@ -119,7 +119,7 @@ export function FlotationDisplay({ data }: FlotationDisplayProps) {
           color: valueColor,
         }}
       >
-        {formatValue(data.pP, 2)}
+        {formatValue(data.pP)}
       </span>
 
       {/* Row 2: 2p 0.000 | 5p 0.000 K 0.00 */}
@@ -137,7 +137,7 @@ export function FlotationDisplay({ data }: FlotationDisplayProps) {
         style={{
           position: "absolute",
           top: "52px",
-          left: "35px",
+          left: "48px",
           color: valueColor,
         }}
       >
@@ -181,7 +181,7 @@ export function FlotationDisplay({ data }: FlotationDisplayProps) {
           color: valueColor,
         }}
       >
-        {formatValue(data.pK, 2)}
+        {formatValue(data.pK)}
       </span>
 
       {/* Row 3: 3p 0 | CD 0 | 0 */}
@@ -307,7 +307,7 @@ export function FlotationDisplay({ data }: FlotationDisplayProps) {
           color: valueColor,
         }}
       >
-        {formatValue(data.o1k, 2)}
+        {formatValue(data.o1k)}
       </span>
       <span
         style={{
@@ -327,7 +327,7 @@ export function FlotationDisplay({ data }: FlotationDisplayProps) {
           color: valueColor,
         }}
       >
-        {formatValue(data.o2k, 2)}
+        {formatValue(data.o2k)}
       </span>
 
       {/* Row 6: O1o 0 | O2o 0 */}
