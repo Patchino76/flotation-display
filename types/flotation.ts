@@ -1,32 +1,32 @@
 export interface FlotationData {
   // Main extraction percentage
-  extraction: number
+  extraction: number;
 
   // Left column parameters (1p, 2p, 3p)
-  p1: number
-  p2: number
-  p3: number
+  p1: number;
+  p2: number;
+  p3: number;
 
   // Right column top parameters (4p, 5p, CD)
-  p4: number
-  p5: number
-  cd: number
+  p4: number;
+  p5: number;
+  cd: number;
 
-  pP: number // P indicator value (row 1)
-  pK: number // K indicator value (row 2)
-  cdVal: number // CD extra value (row 3)
+  pP: number; // P indicator value (row 1)
+  pK: number; // K indicator value (row 2)
+  pO: number; // CD extra value (row 3)
 
   // O parameters
-  op: number
-  oo: number
-  o1k: number
-  o2k: number // Renamed from o00k to o2k
-  o1o: number
-  o2o: number
+  op: number;
+  oo: number;
+  o1k: number;
+  o2k: number; // Renamed from o00k to o2k
+  o1o: number;
+  o2o: number;
 
   // Date and time
-  date: string
-  time: string
+  date: string;
+  time: string;
 }
 
 export const defaultFlotationData: FlotationData = {
@@ -39,7 +39,7 @@ export const defaultFlotationData: FlotationData = {
   cd: 0,
   pP: 0.0,
   pK: 0.0,
-  cdVal: 0,
+  pO: 0,
   op: 0,
   oo: 0,
   o1k: 0.0,
@@ -48,4 +48,4 @@ export const defaultFlotationData: FlotationData = {
   o2o: 0,
   date: "00.00.0000",
   time: "00:00",
-}
+};

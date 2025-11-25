@@ -106,7 +106,7 @@ export function FlotationDisplay({ data }: FlotationDisplayProps) {
           position: "absolute",
           top: "30px",
           left: "200px",
-          color: indicatorColor,
+          color: labelColor,
         }}
       >
         P
@@ -168,7 +168,7 @@ export function FlotationDisplay({ data }: FlotationDisplayProps) {
           position: "absolute",
           top: "52px",
           left: "200px",
-          color: indicatorColor,
+          color: labelColor,
         }}
       >
         K
@@ -229,11 +229,21 @@ export function FlotationDisplay({ data }: FlotationDisplayProps) {
         style={{
           position: "absolute",
           top: "74px",
+          left: "200px",
+          color: labelColor,
+        }}
+      >
+        O
+      </span>
+      <span
+        style={{
+          position: "absolute",
+          top: "74px",
           left: "220px",
           color: valueColor,
         }}
       >
-        {formatValue(data.cdVal)}
+        {formatValue(data.pO)}
       </span>
 
       {/* Row 4: Op 0 | 0o 0 */}

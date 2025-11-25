@@ -49,23 +49,6 @@ export async function executeQuery(
   return await request.query(query);
 }
 
-export async function getTagValue(tagId: number) {
-  // Fetch the latest value for a specific tag
-  // Using the query pattern: SELECT TOP 1 ... ORDER BY IndexTime DESC
-  const query = `
-    SELECT TOP 1 IndexTime, LoggerTagID, Value 
-    FROM LoggerValues 
-    WHERE LoggerTagID = @tagId 
-    ORDER BY IndexTime DESC
-  `;
-
-  const result = await executeQuery(query, [
-    { name: "tagId", type: sql.Int, value: tagId },
-  ]);
-
-  return result.recordset[0];
-}
-
 export async function getLatestValuesForTags(tagIds: number[]) {
   if (tagIds.length === 0) return [];
 
