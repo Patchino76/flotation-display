@@ -9,12 +9,7 @@ export const FLOTATION_TAGS = {
   p3: 1432,
   cd: 1436,
   pO: 1600,
-  op: 3284,
-  oo: 61,
-  o1k: 3283,
-  o2k: 3281,
-  o1o: 3282,
-  o2o: 3280,
+  p0: 61,
 } as const;
 
 export type FlotationTagKey = keyof typeof FLOTATION_TAGS;

@@ -17,12 +17,7 @@ export interface FlotationData {
   pO: number; // CD extra value (row 3)
 
   // O parameters
-  op: number;
-  oo: number;
-  o1k: number;
-  o2k: number; // Renamed from o00k to o2k
-  o1o: number;
-  o2o: number;
+  p0: number;
 
   // Date and time
   date: string;
@@ -40,12 +35,7 @@ export const defaultFlotationData: FlotationData = {
   pP: 0.0,
   pK: 0.0,
   pO: 0,
-  op: 0,
-  oo: 0,
-  o1k: 0.0,
-  o2k: 0.0,
-  o1o: 0,
-  o2o: 0,
+  p0: 0,
   date: "00.00.0000",
   time: "00:00",
 };
