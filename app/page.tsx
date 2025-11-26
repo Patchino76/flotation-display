@@ -9,7 +9,7 @@ export default function Home() {
   });
 
   return (
-    <main className="min-h-screen bg-black p-4">
+    <main className="min-h-screen bg-black flex justify-start items-start">
       <FlotationDisplay data={data} />
     </main>
   );

@@ -10,7 +10,7 @@ export const FLOTATION_TAGS = {
   cd: 1436,
   pO: 1600,
   op: 3284,
-  oo: 3285,
+  oo: 61,
   o1k: 3283,
   o2k: 3281,
   o1o: 3282,
