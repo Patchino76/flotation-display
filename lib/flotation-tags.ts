@@ -1,4 +1,4 @@
-export const FLOTATION_TAGS = {
+export const _FLOTATION_TAGS_OLD = {
   extraction: 1790,
   p1: 1430,
   p4: 1433,
@@ -10,6 +10,20 @@ export const FLOTATION_TAGS = {
   cd: 1436,
   pO: 1600,
   p0: 61,
+} as const;
+
+export const FLOTATION_TAGS = {
+  extraction: 1790,
+  p0: 61,
+  p1: 53,
+  p2: 54,
+  p3: 55,
+  p4: 56,
+  p5: 5581,
+  pP: 59,
+  pK: 76,
+  pO: 58,
+  cd: 60,
 } as const;
 
 export type FlotationTagKey = keyof typeof FLOTATION_TAGS;
