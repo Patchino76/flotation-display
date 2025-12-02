@@ -13,7 +13,15 @@ export function FlotationDisplay({ data }: FlotationDisplayProps) {
   const labelColor = "#00ff00";
   const valueColor = "#ff0000";
   const indicatorColor = "#ff00ff";
-  const dateColor = "#00ffff";
+  const dateColor = "#ffffff";
+
+  // Layout: 7 rows total, 192px height
+  // Row 0: Header (ИЗВЛИЧАНЕ) - top: 4px
+  // Rows 1-5: Data rows (0p-4p left, 5p/P/K/O/CD right) - 26px spacing
+  // Row 6: Date/Time - bottom area
+
+  const rowHeight = 26;
+  const row = (n: number) => 4 + n * rowHeight;
 
   return (
     <div
@@ -24,7 +32,7 @@ export function FlotationDisplay({ data }: FlotationDisplayProps) {
         height: "192px",
         backgroundColor: "#1a1a1a",
         fontFamily: "'Courier New', Courier, monospace",
-        fontSize: "14px",
+        fontSize: "16px",
         fontWeight: "bold",
       }}
     >
@@ -32,10 +40,10 @@ export function FlotationDisplay({ data }: FlotationDisplayProps) {
       <span
         style={{
           position: "absolute",
-          top: "4px",
+          top: `${row(0)}px`,
           left: "4px",
           color: labelColor,
-          fontSize: "16px",
+          fontSize: "18px",
         }}
       >
         ИЗВЛИЧАНЕ:
@@ -43,10 +51,10 @@ export function FlotationDisplay({ data }: FlotationDisplayProps) {
       <span
         style={{
           position: "absolute",
-          top: "4px",
-          left: "110px",
+          top: `${row(0)}px`,
+          left: "115px",
           color: "#ffff00",
-          fontSize: "16px",
+          fontSize: "18px",
         }}
       >
         {formatPercent(data.extraction)}
@@ -54,21 +62,21 @@ export function FlotationDisplay({ data }: FlotationDisplayProps) {
       <span
         style={{
           position: "absolute",
-          top: "4px",
-          left: "170px",
+          top: `${row(0)}px`,
+          left: "172px",
           color: "#ffff00",
-          fontSize: "16px",
+          fontSize: "18px",
         }}
       >
         %
       </span>
 
-      {/* Column 1: 0p, 1p, 2p, 3p, 4p, 5p */}
+      {/* Column 1: 0p, 1p, 2p, 3p, 4p */}
       {/* Row 1: 0p */}
       <span
         style={{
           position: "absolute",
-          top: "30px",
+          top: `${row(1)}px`,
           left: "4px",
           color: labelColor,
         }}
@@ -78,7 +86,7 @@ export function FlotationDisplay({ data }: FlotationDisplayProps) {
       <span
         style={{
           position: "absolute",
-          top: "30px",
+          top: `${row(1)}px`,
           left: "35px",
           color: valueColor,
         }}
@@ -90,7 +98,7 @@ export function FlotationDisplay({ data }: FlotationDisplayProps) {
       <span
         style={{
           position: "absolute",
-          top: "52px",
+          top: `${row(2)}px`,
           left: "4px",
           color: labelColor,
         }}
@@ -100,7 +108,7 @@ export function FlotationDisplay({ data }: FlotationDisplayProps) {
       <span
         style={{
           position: "absolute",
-          top: "52px",
+          top: `${row(2)}px`,
           left: "35px",
           color: valueColor,
         }}
@@ -112,7 +120,7 @@ export function FlotationDisplay({ data }: FlotationDisplayProps) {
       <span
         style={{
           position: "absolute",
-          top: "74px",
+          top: `${row(3)}px`,
           left: "4px",
           color: labelColor,
         }}
@@ -122,7 +130,7 @@ export function FlotationDisplay({ data }: FlotationDisplayProps) {
       <span
         style={{
           position: "absolute",
-          top: "74px",
+          top: `${row(3)}px`,
           left: "35px",
           color: valueColor,
         }}
@@ -134,7 +142,7 @@ export function FlotationDisplay({ data }: FlotationDisplayProps) {
       <span
         style={{
           position: "absolute",
-          top: "96px",
+          top: `${row(4)}px`,
           left: "4px",
           color: labelColor,
         }}
@@ -144,7 +152,7 @@ export function FlotationDisplay({ data }: FlotationDisplayProps) {
       <span
         style={{
           position: "absolute",
-          top: "96px",
+          top: `${row(4)}px`,
           left: "35px",
           color: valueColor,
         }}
@@ -152,33 +160,11 @@ export function FlotationDisplay({ data }: FlotationDisplayProps) {
         {formatValue(data.p3)}
       </span>
 
-      {/* Row 5: 4p */}
+      {/* Row 5: 5p (moved to bottom of column 1) */}
       <span
         style={{
           position: "absolute",
-          top: "118px",
-          left: "4px",
-          color: labelColor,
-        }}
-      >
-        4p
-      </span>
-      <span
-        style={{
-          position: "absolute",
-          top: "118px",
-          left: "35px",
-          color: valueColor,
-        }}
-      >
-        {formatValue(data.p4)}
-      </span>
-
-      {/* Row 6: 5p */}
-      <span
-        style={{
-          position: "absolute",
-          top: "140px",
+          top: `${row(5)}px`,
           left: "4px",
           color: labelColor,
         }}
@@ -188,7 +174,7 @@ export function FlotationDisplay({ data }: FlotationDisplayProps) {
       <span
         style={{
           position: "absolute",
-          top: "140px",
+          top: `${row(5)}px`,
           left: "35px",
           color: valueColor,
         }}
@@ -196,12 +182,12 @@ export function FlotationDisplay({ data }: FlotationDisplayProps) {
         {formatValue(data.p5)}
       </span>
 
-      {/* Column 2: P, K, O, CD */}
+      {/* Column 2: P, K, O, CD, 4p */}
       {/* Row 1: P */}
       <span
         style={{
           position: "absolute",
-          top: "30px",
+          top: `${row(1)}px`,
           left: "100px",
           color: labelColor,
         }}
@@ -211,7 +197,7 @@ export function FlotationDisplay({ data }: FlotationDisplayProps) {
       <span
         style={{
           position: "absolute",
-          top: "30px",
+          top: `${row(1)}px`,
           left: "130px",
           color: valueColor,
         }}
@@ -223,7 +209,7 @@ export function FlotationDisplay({ data }: FlotationDisplayProps) {
       <span
         style={{
           position: "absolute",
-          top: "52px",
+          top: `${row(2)}px`,
           left: "100px",
           color: labelColor,
         }}
@@ -233,7 +219,7 @@ export function FlotationDisplay({ data }: FlotationDisplayProps) {
       <span
         style={{
           position: "absolute",
-          top: "52px",
+          top: `${row(2)}px`,
           left: "130px",
           color: valueColor,
         }}
@@ -245,7 +231,7 @@ export function FlotationDisplay({ data }: FlotationDisplayProps) {
       <span
         style={{
           position: "absolute",
-          top: "74px",
+          top: `${row(3)}px`,
           left: "100px",
           color: labelColor,
         }}
@@ -255,7 +241,7 @@ export function FlotationDisplay({ data }: FlotationDisplayProps) {
       <span
         style={{
           position: "absolute",
-          top: "74px",
+          top: `${row(3)}px`,
           left: "130px",
           color: valueColor,
         }}
@@ -267,7 +253,7 @@ export function FlotationDisplay({ data }: FlotationDisplayProps) {
       <span
         style={{
           position: "absolute",
-          top: "96px",
+          top: `${row(4)}px`,
           left: "100px",
           color: labelColor,
         }}
@@ -277,12 +263,34 @@ export function FlotationDisplay({ data }: FlotationDisplayProps) {
       <span
         style={{
           position: "absolute",
-          top: "96px",
+          top: `${row(4)}px`,
           left: "130px",
           color: valueColor,
         }}
       >
         {formatValue(data.cd)}
+      </span>
+
+      {/* Row 5: 4p (moved to bottom of column 2) */}
+      <span
+        style={{
+          position: "absolute",
+          top: `${row(5)}px`,
+          left: "100px",
+          color: labelColor,
+        }}
+      >
+        4p
+      </span>
+      <span
+        style={{
+          position: "absolute",
+          top: `${row(5)}px`,
+          left: "130px",
+          color: valueColor,
+        }}
+      >
+        {formatValue(data.p4)}
       </span>
 
       {/* Bottom row: Date and Time with border */}
@@ -310,7 +318,7 @@ export function FlotationDisplay({ data }: FlotationDisplayProps) {
           position: "absolute",
           top: "172px",
           left: "120px",
-          color: labelColor,
+          color: dateColor,
         }}
       >
         {data.time} h
