@@ -10,6 +10,28 @@ export function FlotationDisplay({ data }: FlotationDisplayProps) {
   const formatPercent = (value: number) => value.toFixed(2);
   const formatValue = (value: number, decimals = 3) => value.toFixed(decimals);
 
+  const formatTimeHHmm = (raw: string) => {
+    const cleaned = raw.trim().replace(/\s*h\s*$/i, "");
+    const sep = cleaned.includes(":")
+      ? ":"
+      : cleaned.includes(".")
+      ? "."
+      : cleaned.includes(",")
+      ? ","
+      : null;
+
+    if (sep) {
+      const [hRaw, mRaw] = cleaned.split(sep);
+      if (mRaw === undefined) return cleaned;
+      const hh = hRaw.padStart(2, "0");
+      const mm = mRaw.padStart(2, "0").slice(0, 2);
+      return `${hh}:${mm}`;
+    }
+
+    if (/^\d{1,2}$/.test(cleaned)) return `${cleaned.padStart(2, "0")}:00`;
+    return cleaned;
+  };
+
   const labelColor = "#00ff00";
   const valueColor = "#ff0000";
   const indicatorColor = "#ff00ff";
@@ -321,7 +343,7 @@ export function FlotationDisplay({ data }: FlotationDisplayProps) {
           color: dateColor,
         }}
       >
-        {data.time} h
+        {formatTimeHHmm(data.time)} h
       </span>
     </div>
   );
