@@ -15,8 +15,8 @@
 export const FLOTATION_TAGS = {
   extraction: 1790,
   p0: 5586,
-  p1: 53,
-  p2: 54,
+  p1: 5585,
+  p2: 5584,
   p3: 55,
   p4: 56,
   p5: 5581,
