@@ -45,7 +45,7 @@ export function FlotationDisplaySmall({ data }: FlotationDisplaySmallProps) {
         height: "100px",
         backgroundColor: "#1a1a1a",
         fontFamily: "'Courier New', Courier, monospace",
-        fontSize: "12px",
+        fontSize: "13px",
         fontWeight: "bold",
         padding: "4px",
         boxSizing: "border-box",
@@ -59,7 +59,7 @@ export function FlotationDisplaySmall({ data }: FlotationDisplaySmallProps) {
           justifyContent: "space-between",
           fontSize: "12px",
           lineHeight: "12px",
-          marginBottom: "2px",
+          marginBottom: "3px",
         }}
       >
         <div
@@ -67,8 +67,8 @@ export function FlotationDisplaySmall({ data }: FlotationDisplaySmallProps) {
             display: "flex",
             gap: "5px",
             alignItems: "baseline",
-            fontSize: "14px",
-            lineHeight: "14px",
+            fontSize: "15px",
+            lineHeight: "15px",
             fontWeight: 900,
           }}
         >
@@ -83,49 +83,123 @@ export function FlotationDisplaySmall({ data }: FlotationDisplaySmallProps) {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(2, 1fr)",
-          columnGap: "10px",
-          rowGap: "1px",
-          fontSize: "12px",
-          lineHeight: "12px",
+          gridTemplateColumns: "repeat(3, 1fr)",
+          gridTemplateRows: "repeat(3, auto)",
+          gridAutoFlow: "column",
+          columnGap: "4px",
+          rowGap: "2px",
+          fontSize: "13px",
+          lineHeight: "13px",
           fontVariantNumeric: "tabular-nums",
         }}
       >
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "flex-start",
+            alignItems: "baseline",
+            gap: "2px",
+            whiteSpace: "nowrap",
+          }}
+        >
           <span style={{ color: labelColor }}>p1</span>
-          <span style={{ color: valueColor }}>{formatValue(data.p1)}</span>
+          <span style={{ color: valueColor }}>{formatValue(data.p1, 3)}</span>
         </div>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "flex-start",
+            alignItems: "baseline",
+            gap: "2px",
+            whiteSpace: "nowrap",
+          }}
+        >
           <span style={{ color: labelColor }}>p2</span>
-          <span style={{ color: valueColor }}>{formatValue(data.p2)}</span>
+          <span style={{ color: valueColor }}>{formatValue(data.p2, 3)}</span>
         </div>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "flex-start",
+            alignItems: "baseline",
+            gap: "2px",
+            whiteSpace: "nowrap",
+          }}
+        >
           <span style={{ color: labelColor }}>p3</span>
-          <span style={{ color: valueColor }}>{formatValue(data.p3)}</span>
+          <span style={{ color: valueColor }}>{formatValue(data.p3, 3)}</span>
         </div>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "flex-start",
+            alignItems: "baseline",
+            gap: "2px",
+            whiteSpace: "nowrap",
+          }}
+        >
           <span style={{ color: labelColor }}>p4</span>
-          <span style={{ color: valueColor }}>{formatValue(data.p4)}</span>
+          <span style={{ color: valueColor }}>{formatValue(data.p4, 3)}</span>
         </div>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "flex-start",
+            alignItems: "baseline",
+            gap: "2px",
+            whiteSpace: "nowrap",
+          }}
+        >
           <span style={{ color: labelColor }}>p5</span>
-          <span style={{ color: valueColor }}>{formatValue(data.p5)}</span>
+          <span style={{ color: valueColor }}>{formatValue(data.p5, 3)}</span>
         </div>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "flex-start",
+            alignItems: "baseline",
+            gap: "2px",
+            whiteSpace: "nowrap",
+          }}
+        >
           <span style={{ color: labelColor }}>CD</span>
-          <span style={{ color: valueColor }}>{formatValue(data.cd)}</span>
+          <span style={{ color: valueColor }}>{formatValue(data.cd, 3)}</span>
         </div>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "flex-start",
+            alignItems: "baseline",
+            gap: "2px",
+            whiteSpace: "nowrap",
+          }}
+        >
           <span style={{ color: labelColor }}>P</span>
-          <span style={{ color: valueColor }}>{formatValue(data.pP)}</span>
+          <span style={{ color: valueColor }}>{formatValue(data.pP, 3)}</span>
         </div>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <span style={{ color: labelColor }}>K</span>
-          <span style={{ color: valueColor }}>{formatValue(data.pK)}</span>
-        </div>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "flex-start",
+            alignItems: "baseline",
+            gap: "2px",
+            whiteSpace: "nowrap",
+          }}
+        >
           <span style={{ color: labelColor }}>O</span>
-          <span style={{ color: valueColor }}>{formatValue(data.pO)}</span>
+          <span style={{ color: valueColor }}>{formatValue(data.pO, 3)}</span>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "flex-start",
+            alignItems: "baseline",
+            gap: "2px",
+            whiteSpace: "nowrap",
+          }}
+        >
+          <span style={{ color: labelColor }}>K</span>
+          <span style={{ color: valueColor }}>{formatValue(data.pK, 3)}</span>
         </div>
       </div>
     </div>

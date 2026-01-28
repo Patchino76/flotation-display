@@ -17,12 +17,12 @@ export const FLOTATION_TAGS = {
   p0: 5586,
   p1: 5585,
   p2: 5584,
-  p3: 55,
-  p4: 56,
+  p3: 5583,
+  p4: 5582,
   p5: 5581,
-  pP: 59,
+  pP: 5575,
   pK: 76,
-  pO: 58,
+  pO: 5580,
   cd: 60,
 } as const;
 
